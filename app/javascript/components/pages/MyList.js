@@ -4,7 +4,7 @@ import React, { Component } from 'react'
     render() {
         return (
             <div>
-                <h1>this is the MyList</h1>
+                <h1>This is the MyList</h1>
             </div>
         )
     }
