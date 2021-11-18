@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 
-class Footer extends Component {
+ class Acknowledgment extends Component {
     render() {
         return (
             <div>
-                 <h1>Header</h1>
+               <h1>this is Acknowledgment</h1>
             </div>
         )
     }
 }
-export default Footer
+export default Acknowledgment 
