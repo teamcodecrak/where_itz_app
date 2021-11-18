@@ -13,5 +13,12 @@
  *= require_tree .
  *= require_self
  */
+ .field {
+    margin: 10px;
+  }
+  .actions {
+      margin: 10px;
+  }
+
  @import 'bootstrap';
  
