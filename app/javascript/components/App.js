@@ -40,19 +40,19 @@ import {
         
         <Router>
           <Header {...this.props} /> 
-        <Switch>
-        <Route exact path="/" component={ Home } />
-        <Route path="/aboutus" component={ AboutUs } />
-        <Route path="/mylist" component={ MyList } />
-        <Route path="/searchapi" component={ SearchApi} />
-        <Route path="/titleapi" component={ TitleApi } />
-        <Route path="/acknowledgment" component={ Acknowledgment } />
-        <Route path="/signup" component={ SignUp } />
-        <Route path="/newlist" component={ NewList } />
-        <Route path="/editlist" component={ EditList } />
-        <Route path="/listitems" component={ ListItems } />
-        </Switch>
-        <Footer />
+          <Switch>
+            <Route exact path="/" component={ Home } />
+            <Route path="/aboutus" component={ AboutUs } />
+            <Route path="/mylist" component={ MyList } />
+            <Route path="/searchapi" component={ SearchApi } />
+            <Route path="/titleapi" component={ TitleApi } />
+            <Route path="/acknowledgment" component={ Acknowledgment } />
+            <Route path="/signup" component={ SignUp } />
+            <Route path="/newlist" component={ NewList } />
+            <Route path="/editlist" component={ EditList } />
+            <Route path="/listitems" component={ ListItems } />
+          </Switch>
+          <Footer />
         </Router>
 
       </div>
