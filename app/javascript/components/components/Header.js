@@ -23,12 +23,14 @@ import logo  from '../assets/logo.png'
                         <>
                             <a href={signInRoute} className="nav-link">Sign In</a>
                             <a href={newUserRoute} className="nav-link">Sign Up</a>
+                            <NavLink to="/" className="nav-link">Search</NavLink>
                         </>
                         }
                         {loggedIn &&
                         <>
                             <a href={signOutRoute} className="nav-link">Sign Out</a>
                             <NavLink to="/mylists" className="nav-link">My Lists</NavLink>
+                            <NavLink to="/" className="nav-link">Search</NavLink>
                         </>
                         }
                     </ul>

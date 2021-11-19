@@ -1,11 +1,20 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 
 class Footer extends Component {
     render() {
         return (
-            <div>
-                 <h1>Footer</h1>
-            </div>
+            <footer>
+                <ul>
+                    <p>&copy; 2021 Team CodeCrak</p>
+                </ul>
+                <ul>
+                    <NavLink to="/aboutus">About Us</NavLink>
+                </ul>
+                <ul>
+                    <NavLink to="/acknowledgment">Acknowledgment</NavLink>
+                </ul>
+            </footer>
         )
     }
 }
