@@ -1,0 +1,73 @@
+AllCops:
+  Exclude:
+    - db/**/*
+    - features/**/*
+    - config/**/*
+    - script/**/*
+    - tmp/**/*
+    - !ruby/regexp /old_and_unused\.rb$/
+    - vendor/**/*
+    - node_modules/**/*
+
+Layout/HashAlignment:
+  Enabled: false
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: false
+Layout/AssignmentIndentation:
+  Enabled: false
+Layout/FirstArgumentIndentation:
+  Enabled: false
+Layout/RescueEnsureAlignment:
+  Enabled: false
+Layout/SpaceAroundOperators:
+  Enabled: false
+Lint/DisjunctiveAssignmentInConstructor:
+  Enabled: false
+Lint/RedundantCopDisableDirective:
+  Enabled: false
+Naming/RescuedExceptionsVariableName:
+  Enabled: false
+Style/FloatDivision:
+  Enabled: false
+Style/IfUnlessModifier:
+  Enabled: false
+Style/MutableConstant:
+  Enabled: false
+Style/MultilineWhenThen:
+  Enabled: false
+Style/TrailingCommaInHashLiteral:
+  Enabled: false
+Style/StderrPuts:
+  Enabled: false
+Metrics/AbcSize:
+  Max: 80
+Metrics/BlockLength:
+  Max: 50
+  Exclude:
+    - spec/**/*
+Metrics/ClassLength:
+  Max: 300
+Metrics/CyclomaticComplexity:
+  Max: 40
+Metrics/LineLength:
+  Max: 200
+Metrics/MethodLength:
+  Max: 80
+Metrics/PerceivedComplexity:
+  Max: 15
+Style/MultilineTernaryOperator:
+  Enabled: false
+Style/ConditionalAssignment:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/StructInheritance:
+  Enabled: false
+Style/SymbolArray:
+  Enabled: false
+Style/WordArray:
+  Enabled: false
