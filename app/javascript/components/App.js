@@ -25,7 +25,12 @@ import {
  class App extends Component {
   constructor(props){
     super(props)
+    this.state = {
+      userQuery: ""
+    }
   }
+
+
   render() {
     
     const {
@@ -35,6 +40,7 @@ import {
       signInRoute,
       signOutRoute
     } = this.props
+    const { userQuery } = this.state
     
     return (
       <div>
@@ -42,7 +48,8 @@ import {
         <Router>
           <Header {...this.props} /> 
           <Switch>
-            <Route exact path="/" component={ Home } />
+            <Route exact path="/" render={(props) => <Home userQuery={this.state.userQuery} />}
+            />
             <Route path="/aboutus" component={ AboutUs } />
             <Route path="/mylist" component={ MyList } />
             <Route path="/searchapi" component={ SearchApi } />
