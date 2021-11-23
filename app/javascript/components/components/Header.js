@@ -11,7 +11,7 @@ import logo  from '../assets/logo.png'
             signInRoute,
             signOutRoute
           } = this.props
-          
+          console.log(currentUser)
         return (
             <header>
                 <NavLink to="/">
@@ -29,6 +29,7 @@ import logo  from '../assets/logo.png'
                         {loggedIn &&
                         <>
                             <a href={signOutRoute} className="nav-link">Sign Out</a>
+                            <h1>Hello, {currentUser.username}</h1>
                             <NavLink to="/mylists" className="nav-link">My Lists</NavLink>
                             <NavLink to="/" className="nav-link">Search</NavLink>
                         </>

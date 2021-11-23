@@ -1,17 +1,18 @@
 import React, { Component } from 'react'
+import { Nav, NavItem } from "reactstrap"
 import AboutUs from "./pages/AboutUs"
-import MyList from "./pages/MyList"
-import SearchApi from "./pages/SearchApi"
-import TitleApi from "./pages/TitleApi"
 import Acknowledgment from "./pages/Acknowledgment"
-import NewList from "./pages/NewList"
 import EditList from "./pages/EditList"
-import SignUp from "./pages/SignUp"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
 import Home from "./pages/Home"
 import ListItems from "./pages/ListItems"
-import { Nav, NavItem } from "reactstrap"
+import MyList from "./pages/MyList"
+import NewList from "./pages/NewList"
+import SearchApi from "./pages/SearchApi"
+import SignUp from "./pages/SignUp"
+import TitleApi from "./pages/TitleApi"
+
 
 import {
   BrowserRouter as Router,
