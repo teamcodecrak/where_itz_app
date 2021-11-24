@@ -5,6 +5,7 @@ import React, { Component } from 'react'
          super(props)
          this.state = {
              userQuery: "",
+             searchApi: {},
              submitted: false
          }
      }
@@ -12,11 +13,20 @@ import React, { Component } from 'react'
     handleChange = (e) => {
         console.log(e.target.value)
         this.setState({userQuery: e.target.value})
+    //    User inputs a title and the handleChange triggers the change in state to update the userQuery 
       }
 
       handleSubmit = () => {
-        this.props.searchApi (this.state.userQuery)
+        this.searchApi(this.state.userQuery)
         this.setState({submitted: true})
+        // After the user clicks submit the handleSubmit toggles state from submited to true
+      }
+
+      searchApi = (userQuery) => {
+        fetch("/movies")
+        .then(response => response.json())
+        .then(searchApi => this.setState({ searchApi: {}}))
+        .catch(errors => console.log(errors))
       }
 
     render() {

@@ -26,9 +26,10 @@ import {
   constructor(props){
     super(props)
     this.state = {
-      userQuery: ""
+      searchApi: {}
     }
   }
+
 
 
   render() {
