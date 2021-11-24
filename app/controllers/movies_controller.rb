@@ -2,7 +2,7 @@ class MoviesController < ApplicationController
 
     require 'rest-client'
 
-    def index
+    def get_movies
         watchmode = ENV["WATCHMODE_API_KEY"]
         user_query = user_query_params
         url = "https://api.watchmode.com/v1/search/?apiKey=#{watchmode}&search_field=name&search_value=#{user_query}&type=tv,movie"

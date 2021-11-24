@@ -23,10 +23,11 @@ import React, { Component } from 'react'
       }
 
       searchApi = (userQuery) => {
-        fetch("/movies")
-        .then(response => response.json())
-        .then(searchApi => this.setState({ searchApi: {}}))
-        .catch(errors => console.log(errors))
+        fetch("/get_movies")
+        .then(response => response.json)
+        .then(response => console.log(response))
+        .then(searchApi => this.setState({ searchApi: searchApi}))
+        .catch(errors => (console.log(errors)))
       }
 
     render() {
