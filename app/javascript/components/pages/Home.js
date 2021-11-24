@@ -23,8 +23,8 @@ import React, { Component } from 'react'
       }
 
       searchApi = (userQuery) => {
-        fetch("/get_movies")
-        .then(response => response.json)
+        fetch(`/get_movies?user_query=${userQuery}`)
+        .then(response => response.json())
         .then(response => console.log(response))
         .then(searchApi => this.setState({ searchApi: searchApi}))
         .catch(errors => (console.log(errors)))
