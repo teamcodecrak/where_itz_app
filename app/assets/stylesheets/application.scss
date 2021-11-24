@@ -1,19 +1,20 @@
+// Imports
+ @import 'bootstrap';
 
+// Footer/Header styling
+.footer{
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+.header{
+  top: 0;
+  position: fixed;
+  width: 100%;
+}
 
-// Header styling
-// .nav-bar {
-//   display: flex;
-//   justify-content: space-around;
-//   align-items: center;
-//   background-color: #540000;
-// }
-// header {padding: 60px;
-//   text-align: center;
-//   background: #1abc9c;
-//   color: white;
-//   font-size: 30px;}
-/* Add a black background color to the top navigation */
-.nav-bar {
+/* Add a red background color to the bars */
+.nav-bar, .foot-bar {
   background-color: #540000;
   overflow: hidden;
   display: flex;
@@ -21,25 +22,42 @@
   align-items: center;
 }
 
-/* Style the links inside the navigation bar */
+/* Style the links inside the bars */
 .nav-bar a {
   float: left;
   color: goldenrod;
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px;
   text-decoration: none;
   font-size: 17px;
   background-color: #540000;
+  width: 20%;
+}
+.foot-bar a {
+  float: left;
+  color: goldenrod;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  font-size: 17px;
+  background-color: #540000;
+  width: 33%;
 }
 
 /* Change the color of links on hover */
 .nav-bar a:hover {
   background-color: goldenrod;
-  color: black;
+  color: #3C3A43;
 }
 
+.foot-bar a:hover {
+  background-color: goldenrod;
+  color: #3C3A43;
+}
+// universal styling
 * {
-  background-color: #25222C;
+  background-color: #3C3A43;
+  color: goldenrod;
 }
 
 //  Devise form styling
@@ -49,6 +67,4 @@
   .actions {
       margin: 10px;
   }
-
- @import 'bootstrap';
  

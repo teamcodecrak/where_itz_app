@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
-import logo  from '../assets/logo.png'
+import logo  from '../assets/logo2.png'
 
  class Header extends Component {
     render() {
@@ -15,35 +15,24 @@ import logo  from '../assets/logo.png'
         return (
             <header>
                 <div className="nav-bar">
-                <NavLink to="/">
-                    <img src={logo} alt="where itz app logo" className="logo" width="50px" height="50px"/>
-                </NavLink>
+                    <NavLink to="/">
+                        <img src={logo} alt="where itz app logo" className="logo" width="100px" height="50px"/>
+                    </NavLink>
                     {!loggedIn &&
                     <>
-                        
-                            <a href={signInRoute} className="nav-link">Sign In</a>
-                            <a href={newUserRoute} className="nav-link">Sign Up</a>
-                            <NavLink to="/" className="nav-link">Search</NavLink>
+                        <a href={signInRoute} className="nav-link">Sign In</a>
+                        <a href={newUserRoute} className="nav-link">Sign Up</a>
+                        <NavLink to="/" className="nav-link">Search</NavLink>
                     </>
-
                     }
                     {loggedIn &&
                     <>
-                        <ul>
-                            <h1>Hello, {currentUser.username}</h1>
-                        </ul>
-                        <ul>
-                            <a href={signOutRoute} className="nav-link">Sign Out</a>
-                        </ul>
-                        <ul>
-                            <NavLink to="/mylists" className="nav-link">My Lists</NavLink>
-                        </ul>
-                        <ul>
-                            <NavLink to="/" className="nav-link">Search</NavLink>
-                        </ul>
+                        <h1 style={{backgroundColor:"#540000", fontSize:"20px", padding:"16px"}}>Hello, {currentUser.username}</h1>
+                        <a href={signOutRoute} className="nav-link">Sign Out</a>
+                        <NavLink to="/mylists" className="nav-link">My Lists</NavLink>
+                        <NavLink to="/" className="nav-link">Search</NavLink>
                     </>
-                    }
-                   
+                    } 
                 </div>
             </header>
         )
