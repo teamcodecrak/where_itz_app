@@ -25,7 +25,37 @@ import {
  class App extends Component {
   constructor(props){
     super(props)
+    this.state = {
+      movies: [],
+      list: [],
+      movieList: []
+    }
   }
+  componentDidMount(){
+    this.readList()
+    this.readMovieList()
+    this.readMovies()
+
+  }
+  readList = () => {
+    fetch("/lists")
+    .then(response =>  response.json())
+    .then(payload => this.setState({list: payload}))
+    .catch(errors => console.log("index errors:", errors))
+  }
+  readMovieList = () => {
+    fetch("/movie_lists")
+    .then(response =>  response.json())
+    .then(payload => this.setState({movieList: payload}))
+    .catch(errors => console.log("index errors:", errors))
+  }
+  readMovies = () => {
+    fetch("/movies")
+    .then(response =>  response.json())
+    .then(payload => this.setState({movies: payload}))
+    .catch(errors => console.log("index errors:", errors))
+  }
+  
   render() {
     
     const {
@@ -35,7 +65,7 @@ import {
       signInRoute,
       signOutRoute
     } = this.props
-    
+    const { list, movies, movieList } = this.state
     return (
       <div>
         
@@ -44,7 +74,8 @@ import {
           <Switch>
             <Route exact path="/" component={ Home } />
             <Route path="/aboutus" component={ AboutUs } />
-            <Route path="/mylist" component={ MyList } />
+            <Route path="/mylists" render={() => <MyList list={list} movies={movies} movieList={movieList}/>}
+             />
             <Route path="/searchapi" component={ SearchApi } />
             <Route path="/titleapi" component={ TitleApi } />
             <Route path="/acknowledgment" component={ Acknowledgment } />

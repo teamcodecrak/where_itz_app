@@ -6,8 +6,45 @@ first_user = User.first
 
 first_list = List.create(list_name: 'first list', user_id: first_user.id)
 
-first_movie = Movie.create(title: '456 Street', show_type: 'movie', network: ['hulu'], genre: ['Horror','Foreign'], us_rating: 'R', year: 2021)
+movies = [
+    {
+        title: '456 Street',
+        show_type: 'movie',
+        network: ['Hulu'],
+        genre: ['Horror','Foreign'],
+        us_rating: 'R',
+        year: 2021
+    },
+    {
+        title: 'Jumanji',
+        show_type: 'movie',
+        network: ['Netflix', 'Disney'],
+        genre: ['Adventure', 'Comedy'],
+        us_rating: 'PG-13',
+        year: 2019
+    },
+    {
+        title: 'Easy Street',
+        show_type: 'tv show',
+        network: ['Amazon'],
+        genre: ['Comedy'],
+        us_rating: 'PG',
+        year: 2006
+    },
+    {
+        title: 'A Bronx Tale',
+        show_type: 'movie',
+        network: ['Hulu'],
+        genre: ['Drama'],
+        us_rating: 'PG-13',
+        year: 1993
+    }
+]
 
-second_movie = Movie.create(title: 'Jumanji', show_type: 'movie', network: ['Netflix', 'Disney'], genre: ['Adventure', 'Comedy'], us_rating: 'PG-13', year: 2019)
+movies.each do |attributes|
+    Movie.create attributes
+end
+
+first_movie = Movie.first
 
 MovieList.create(list: first_list, movie: first_movie)
