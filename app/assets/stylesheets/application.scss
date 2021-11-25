@@ -1,24 +1,70 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+// Imports
+ @import 'bootstrap';
+
+// Footer/Header styling
+.footer{
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+.header{
+  top: 0;
+  position: fixed;
+  width: 100%;
+}
+
+/* Add a red background color to the bars */
+.nav-bar, .foot-bar {
+  background-color: #540000;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style the links inside the bars */
+.nav-bar a {
+  float: left;
+  color: goldenrod;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  font-size: 17px;
+  background-color: #540000;
+  width: 20%;
+}
+.foot-bar a {
+  float: left;
+  color: goldenrod;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  font-size: 17px;
+  background-color: #540000;
+  width: 33%;
+}
+
+/* Change the color of links on hover */
+.nav-bar a:hover {
+  background-color: goldenrod;
+  color: #3C3A43;
+}
+
+.foot-bar a:hover {
+  background-color: goldenrod;
+  color: #3C3A43;
+}
+// universal styling
+* {
+  background-color: #3C3A43;
+  color: goldenrod;
+}
+
+//  Devise form styling
  .field {
     margin: 10px;
   }
   .actions {
       margin: 10px;
   }
-
- @import 'bootstrap';
  
