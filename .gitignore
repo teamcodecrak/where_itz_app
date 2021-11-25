@@ -35,4 +35,10 @@
 yarn-debug.log*
 .yarn-integrity
 
+
+#API KEY
 .env
+
+#ignore DS tracking
+.DS_Store
+
