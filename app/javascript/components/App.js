@@ -74,8 +74,7 @@ import {
           <Switch>
             <Route exact path="/" component={ Home } />
             <Route path="/aboutus" component={ AboutUs } />
-            <Route path="/mylists" render={() => <MyList list={list} movies={movies} movieList={movieList}/>}
-             />
+            <Route path="/mylists" render={(props) => <MyList list={list} movies={movies} movieList={movieList}/>} />
             <Route path="/searchapi" component={ SearchApi } />
             <Route path="/titleapi" component={ TitleApi } />
             <Route path="/acknowledgment" component={ Acknowledgment } />
@@ -92,3 +91,10 @@ import {
   }
 }
 export default App
+
+// {this.props.logged_in && 
+//   <Route path="/mylists" render={(props) => {
+//     let list = this.state.list.filter(a => a.user_id === this.props.current_user.id)
+//     return <MyList list={list} movies={movies} movieList={movieList}/>
+//     }} />
+//   }
