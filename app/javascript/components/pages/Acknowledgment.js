@@ -5,7 +5,7 @@ import React, { Component } from 'react'
         return (
             <div class="container mt-3">
             <div class="card">
-              <div class="card-header">Thank you to the following resources for helping make this app</div>
+              <div style={{fontSize: "35px"}}class="card-header">Thank you to the following resources for helping make this app</div>
                 <div class="card-body">
                 <dl>
                     <dt style={{fontSize: "25px"}}>Websites</dt>
