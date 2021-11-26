@@ -1,5 +1,10 @@
 // Imports
  @import 'bootstrap';
+ @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script&family=Lobster&display=swap');
+
+ *{
+   font-family: 'Lobster', cursive;
+ }
 
 // Footer/Header styling
 .footer{
@@ -67,4 +72,10 @@
   .actions {
       margin: 10px;
   }
+
+  // Card styling
+  .card{
+    text-align: center;
+  }
+
  

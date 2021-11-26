@@ -99,6 +99,13 @@ Add an import to the scss file. app/assets/stylesheets/application.scss.
 @import 'bootstrap';
 $ bundle
 $ yarn
+$yarn add bootstrap jquery popper.js
+Add to file ./config/webpack/environment.js const webpack = require("webpack") 
+environment.plugins.append("Provide", new webpack.ProvidePlugin({
+  $: 'jquery',
+  jQuery: 'jquery',
+  Popper: ['popper.js', 'default']
+}))
 Make sure to stop/restart your server.
 Create three directories in your React application: pages, assets, components
 Add footer and header to components
