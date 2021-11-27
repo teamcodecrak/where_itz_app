@@ -153,12 +153,26 @@ second_movie = Movie.create(title: 'Jumanji', show_type: 'movie', network: ['Net
 
 MovieList.create(list: first_list, movie: first_movie)
 
+## Tips
+`Inline styling structure
+style={{color:"gold", backgroundColor:"#540000"}}`
+
+Devise forms
+https://rails.devcamp.com/trails/rails-bdd-tdd-course/campsites/building-advanced-user-interface-elements/guides/how-to-style-devise-sign-forms-rails
+Updating the styling for our sign in forms provided by Devise---log in form
+
+Go to the views/devise/sessions directory, and open the file called new.html.erb. This file has the code for your log in page.
+
+Now, let's add class: "form-horizontal" to the form tag. Next, change the class of each div to "form-group".
+
+Next, update the style of the "Log in" button. Then, add the class control-label to both the "password" and "remember me" labels. Likewise, add the class form-control to the email and password fields.
+
+To make email and password fields shorter in the browser, put the entire form element into a <div> tag, and then add a class to it called col-md-4. This leverages the Bootstrap grid layout and will take up 4 columns.
+
 ## Usage
 How does one go about using it?
 Provide various use cases and code examples here.
 
-`Inline styling structure
-style={{color:"gold", backgroundColor:"#540000"}}`
 
 
 ## Project Status
