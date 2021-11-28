@@ -91,6 +91,19 @@ import {
     .then(() => this.readMovieList())
     .catch(errors => console.log("create errors:", errors))
   }
+  updateList = (editedList, id) => {
+    fetch(`http://localhost:3000/lists/${id}`,{
+      body: JSON.stringify(editedList),
+      headers: {
+        "Content-Type" : "application/json"
+      },
+      method: "PATCH"
+    })
+    .then(response => response.json())
+    .then(payload => this.readList())
+    .catch(errors => (console.log(errors)))
+  }
+
 
   deleteList = (id) => {
     fetch(`lists/${id}`, {
@@ -164,8 +177,20 @@ import {
             <Route path="/titleapi" component={ TitleApi } />
             <Route path="/acknowledgment" component={ Acknowledgment } />
             <Route path="/signup" component={ SignUp } />
-            <Route path="/newlist" component={ NewList } />
-            <Route path="/editlist" render={(props) => <EditList list={list} movies={movies} movieList={movieList}/>} />
+            
+            
+            <Route path="/newlist"
+            render={(props) => {
+            return <NewList list={list} createList={list.createList}current_user={this.props.current_user} />
+           }} />
+           <Route
+              path="//lists/:id/edit"
+              render={(props) => {
+                let id = props.match.params.id
+                let list = this.state.list.find(c => c.id === +id)
+                return <ListEdit list={list} updateList={this.updateList } id={id} />
+              }}
+            />
             <Route path="/listitems" component={ ListItems } />
           </Switch>
           <Footer />
