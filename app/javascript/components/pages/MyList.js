@@ -32,8 +32,8 @@ class MyList extends Component {
             Edit List Name
           </Button>
         </NavLink>
-        <Button onClick={() => this.props.deleteApartment(apartment.id)}>
-          Delete Listing
+        <Button onClick={() => this.props.deleteList(list.id)}>
+          Delete List
         </Button>
       </div>
     );
