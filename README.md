@@ -153,6 +153,10 @@ second_movie = Movie.create(title: 'Jumanji', show_type: 'movie', network: ['Net
 
 MovieList.create(list: first_list, movie: first_movie)
 
+About Us Page Columns width 25 percent to fit 4 on a page.
+
+Acknowledgment Page filled with content using <dl> <dd> tags
+
 ## Tips
 `Inline styling structure
 style={{color:"gold", backgroundColor:"#540000"}}`
@@ -169,10 +173,12 @@ Next, update the style of the "Log in" button. Then, add the class control-label
 
 To make email and password fields shorter in the browser, put the entire form element into a <div> tag, and then add a class to it called col-md-4. This leverages the Bootstrap grid layout and will take up 4 columns.
 
+Using <u></u> to underline text
+Hold Options in terminal to skip through each word
+
 ## Usage
 How does one go about using it?
 Provide various use cases and code examples here.
-
 
 
 ## Project Status
@@ -181,3 +187,4 @@ Project is: _in progress_
 
 ## Room for Improvement
 API backend fetching
+Back To Top button at the bottom of the results page
