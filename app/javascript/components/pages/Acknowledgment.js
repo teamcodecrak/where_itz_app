@@ -5,10 +5,14 @@ import React, { Component } from 'react'
         return (
             <div class="container mt-3">
                 <div class="card">
-                    <div style={{fontSize: "35px"}}class="card-header">Thank you to the following resources for helping make this app</div>
+                    <div style={{fontSize: "35px", color: "goldonrod"}}class="card-header">Thank you to the following resources for helping make this app!</div>
                         <div class="card-body">
                         <dl>
-                            <dt style={{fontFamily:"sans-serif", fontSize: "25px"}}>Websites</dt>
+                            <dt style={{fontSize: "40px"}}>
+                                <u>
+                                Websites
+                                </u>
+                                </dt>
                             <br/>
                                 <dd>
                                     - <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>
@@ -29,7 +33,11 @@ import React, { Component } from 'react'
                                     - <a href="https://api.watchmode.com/" target="_blank">Watch Mode</a>
                                 </dd>
                             <br/>
-                            <dt style={{fontSize: "25px"}}>Mentors</dt>
+                            <dt style={{fontSize: "40px"}}>
+                                <u>
+                                Mentors
+                                </u>
+                                </dt>
                             <br/>
                                 <dd>- Austin Walker</dd>
                                 <dd>- Sarah Proctor</dd>

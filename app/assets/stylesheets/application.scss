@@ -96,7 +96,7 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
   padding: 0px 8px;
   text-align: center;
-  background-color: #d9daba;
+  background-color: #feffd9;
  }
  /* Responsive columns - one column layout (vertical) on small screens */
  @media screen and (max-width: 600px) {
@@ -119,13 +119,22 @@
   margin-left: auto;
   margin-right: auto;
   border-radius: 10%;
-  border-color: #3C3A43;
+  border-color: #1e6cb4;
   padding: 8px;
   text-align: center;
   margin-top: 8px;
   width: 30%;
 }
 
-dd {
+dd, dd a{
   font-family:"sans-serif";
+  font-size: 30px;
+}
+
+h2{
+  padding-left: 10px;
+}
+
+.card-body{
+  border-radius: 10px;
 }
