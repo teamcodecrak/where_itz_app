@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
+import { CardImg, Card, Button, CardTitle, Row, Col } from 'reactstrap'
 
 class MyList extends Component {
   render() {
@@ -26,6 +27,14 @@ class MyList extends Component {
               );
             })}
         </article>
+        <NavLink to={"/editlist"}>
+          <Button>
+            Edit List Name
+          </Button>
+        </NavLink>
+        <Button onClick={() => this.props.deleteApartment(apartment.id)}>
+          Delete Listing
+        </Button>
       </div>
     );
   }

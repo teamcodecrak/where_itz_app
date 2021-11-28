@@ -26,17 +26,18 @@ import {
   constructor(props){
     super(props)
     this.state = {
-      movies: [],
       list: [],
-      movieList: []
+      movieList: [],
+      movies: [],
     }
   }
+
   componentDidMount(){
     this.readList()
     this.readMovieList()
     this.readMovies()
-
   }
+
   readList = () => {
     fetch("/lists")
     .then(response =>  response.json())
@@ -55,7 +56,91 @@ import {
     .then(payload => this.setState({movies: payload}))
     .catch(errors => console.log("index errors:", errors))
   }
-  
+
+  createList = (newList) => {
+    fetch("/lists", {
+      body: JSON.stringify(newList),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+    .then(response => {
+      if(response.status === 422){
+        alert("There is something wrong with your submission.")
+      }
+      return response.json()
+    })
+    .then(() => this.readList())
+    .catch(errors => console.log("create errors:", errors))
+  }
+  createMovieList = (newMovieList) => {
+    fetch("/movie_lists", {
+      body: JSON.stringify(movieList),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+    .then(response => {
+      if(response.status === 422){
+        alert("There is something wrong with your submission.")
+      }
+      return response.json()
+    })
+    .then(() => this.readMovieList())
+    .catch(errors => console.log("create errors:", errors))
+  }
+
+  deleteList = (id) => {
+    fetch(`lists/${id}`, {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "DELETE"
+    })
+    .then(response => {
+      if(response.status === 422){
+        alert("Something went wrong with your delete action.")
+      }
+      return response.json()
+    })
+    .then(() => this.readList())
+    .catch(errors => console.log("delete errors:", errors))
+  }
+  deleteMovieList = (id) => {
+    fetch(`movie_lists/${id}`, {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "DELETE"
+    })
+    .then(response => {
+      if(response.status === 422){
+        alert("Something went wrong with your delete action.")
+      }
+      return response.json()
+    })
+    .then(() => this.readMovieList())
+    .catch(errors => console.log("delete errors:", errors))
+  }
+  deleteMovie = (id) => {
+    fetch(`movies/${id}`, {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "DELETE"
+    })
+    .then(response => {
+      if(response.status === 422){
+        alert("Something went wrong with your delete action.")
+      }
+      return response.json()
+    })
+    .then(() => this.readMovie())
+    .catch(errors => console.log("delete errors:", errors))
+  }
+
   render() {
     
     const {
@@ -65,7 +150,7 @@ import {
       signInRoute,
       signOutRoute
     } = this.props
-    const { list, movies, movieList } = this.state
+    const { list, movieList, movies } = this.state
     return (
       <div>
         
@@ -80,7 +165,7 @@ import {
             <Route path="/acknowledgment" component={ Acknowledgment } />
             <Route path="/signup" component={ SignUp } />
             <Route path="/newlist" component={ NewList } />
-            <Route path="/editlist" component={ EditList } />
+            <Route path="/editlist" render={(props) => <EditList list={list} movies={movies} movieList={movieList}/>} />
             <Route path="/listitems" component={ ListItems } />
           </Switch>
           <Footer />
