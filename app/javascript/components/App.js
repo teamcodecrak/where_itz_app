@@ -184,7 +184,7 @@ import {
             return <NewList list={list} createList={this.createList} currentUser={currentUser} />
            }} />
            <Route
-              path="//lists/:id/edit"
+              path="/listedit/:id"
               render={(props) => {
                 let id = props.match.params.id
                 let list = this.state.list.find(c => c.id === +id)

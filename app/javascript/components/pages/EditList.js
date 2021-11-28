@@ -7,8 +7,8 @@ class EditList extends Component {
     super(props);
     this.state = {
       form: {
-        listName: "",
-        // user_id: this.props.current_user.id
+        list_name: this.props.list ? this.props.list.list_name : "",
+        user_id: this.props.currentUser.id,
       },
       submitted: false,
     };
@@ -26,19 +26,19 @@ class EditList extends Component {
   };
 
   render() {
-    const { listName } = this.state.form;
+    const { list_name } = this.state.form;
     return (
       <div className="page-body">
-        <h3>Change the title of your list</h3>
+        <h3>Change List Title</h3>
         <div className="cards">
           <Form>
             <FormGroup>
-              <Label for="listName">List Name</Label>
+              <Label for="list_name">List Name</Label>
               <Input
-                name="listName"
                 type="text"
+                name="list_name"
                 onChange={this.handleChange}
-                value={listName}
+                value={list_name}
               />
             </FormGroup>
             <br />

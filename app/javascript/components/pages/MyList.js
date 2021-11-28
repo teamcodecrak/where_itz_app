@@ -21,17 +21,23 @@ class MyList extends Component {
                 <section className="card" key={list.id}>
                   <h3>{list.list_name}</h3>
                   <NavLink to={`/listItems/${list.id}`}>
-                    <button>View Movies</button>
+                    <Button>View Movies</Button>
                   </NavLink>
+                  <br/>
+                  <NavLink to={`/editlist/${list.id}`}>
+                    <Button>
+                      Edit List Name
+                    </Button>
+                  </NavLink>
+                  {/* <NavLink>
+                    <Button onClick={() => this.props.deleteList(list.id)}>
+                      Delete List
+                    </Button>
+                  </NavLink> */}
                 </section>
               );
             })}
         </article>
-        <NavLink to={"/editlist"}>
-          <Button>
-            Edit List Name
-          </Button>
-        </NavLink>
         <Button onClick={() => this.props.deleteList(list.id)}>
           Delete List
         </Button>
