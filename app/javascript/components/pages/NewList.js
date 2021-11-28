@@ -7,7 +7,8 @@ class NewList extends Component {
     super(props);
     this.state = {
       form: {
-        listName: "",
+        list_name: "",
+        user_id: this.props.currentUser.id,
       },
       submitted: false,
     };
@@ -15,28 +16,29 @@ class NewList extends Component {
   handleChange = (e) => {
     let { form } = this.state;
     form[e.target.name] = e.target.value;
-    this.setState({ form: form });
+    this.setState({form: form });
   };
   handleSubmit = () => {
     this.props.createList(this.state.form);
     this.setState({ submitted: true });
   };
   render() {
-    const { listName } = this.state.form;
+    const { list_name } = this.state.form;
     return (
       <div>
         <h1>Create A New List</h1>
         <Form>
           <FormGroup>
-            <Label for="listName">List Name</Label>
+            <Label for="list_name">List Name</Label>
             <Input
-              name="listName"
               type="text"
+              name="list_name"
               onChange={this.handleChange}
-              value={listName}
+              value={list_name}
             />
           </FormGroup>
-          <Button onClick={this.handleSubmit} name="submit">
+          <br />
+          <Button onClick={this.handleSubmit} >
             Add A New List
           </Button>
         </Form>

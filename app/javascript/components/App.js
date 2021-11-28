@@ -181,7 +181,7 @@ import {
             
             <Route path="/newlist"
             render={(props) => {
-            return <NewList list={list} createList={list.createList}current_user={this.props.current_user} />
+            return <NewList list={list} createList={this.createList} currentUser={currentUser} />
            }} />
            <Route
               path="//lists/:id/edit"
