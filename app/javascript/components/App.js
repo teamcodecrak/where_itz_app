@@ -187,7 +187,7 @@ import {
               path="/editlist/:id"
               render={(props) => {
                 let id = props.match.params.id
-                let list = this.state.list.find(c => c.id === +id)
+                let list = this.state.list.find(l => l.id === +id)
                 return <EditList list={list} updateList={this.updateList } id={id} />
               }}
             />
@@ -202,9 +202,3 @@ import {
 }
 export default App
 
-// {this.props.logged_in && 
-//   <Route path="/mylists" render={(props) => {
-//     let list = this.state.list.filter(a => a.user_id === this.props.current_user.id)
-//     return <MyList list={list} movies={movies} movieList={movieList}/>
-//     }} />
-//   }

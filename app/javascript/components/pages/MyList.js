@@ -5,7 +5,6 @@ import { CardImg, Card, Button, CardTitle, Row, Col } from 'reactstrap'
 class MyList extends Component {
   render() {
     const { list, movies, movieList } = this.props;
-    console.log("MyList Props", this.props);
     return (
       <div>
         <h1>My Lists</h1>
@@ -30,8 +29,8 @@ class MyList extends Component {
                     </Button>
                   </NavLink>  
                   <Button onClick={() => this.props.deleteList(list.id)}>
-          Delete List
-        </Button>
+                    Delete List
+                  </Button>
                 </section>
               );
             })}
