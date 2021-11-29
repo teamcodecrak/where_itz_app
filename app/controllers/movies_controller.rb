@@ -1,5 +1,8 @@
 class MoviesController < ApplicationController
-
+    def index
+        movies = Movie.all
+        render json: movies
+    end
     require 'rest-client'
 
     def get_movies

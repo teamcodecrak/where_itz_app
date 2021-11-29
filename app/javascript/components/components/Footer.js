@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 class Footer extends Component {
     render() {
         return (
-            <div class="footer">
+            <div className="footer">
                 <footer>
                     <div className="foot-bar">
                     <NavLink to="/">&copy; 2021 Team CodeCrak</NavLink>
