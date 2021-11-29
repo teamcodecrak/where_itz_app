@@ -8,7 +8,7 @@ class EditList extends Component {
     this.state = {
       form: {
         list_name: this.props.list ? this.props.list.list_name : "",
-        user_id: this.props.currentUser.id,
+        // user_id: this.props.currentUser.id,
       },
       submitted: false,
     };
@@ -21,7 +21,7 @@ class EditList extends Component {
   };
 
   handleSubmit = () => {
-    this.props.updateList(this.state.form);
+    this.props.updateList( this.state.form, this.props.id );
     this.setState({ submitted: true });
   };
 

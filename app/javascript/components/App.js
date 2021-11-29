@@ -184,11 +184,11 @@ import {
             return <NewList list={list} createList={this.createList} currentUser={currentUser} />
            }} />
            <Route
-              path="/listedit/:id"
+              path="/editlist/:id"
               render={(props) => {
                 let id = props.match.params.id
                 let list = this.state.list.find(c => c.id === +id)
-                return <ListEdit list={list} updateList={this.updateList } id={id} />
+                return <EditList list={list} updateList={this.updateList } id={id} />
               }}
             />
             <Route path="/listitems" component={ ListItems } />
