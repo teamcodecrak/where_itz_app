@@ -20,6 +20,14 @@ class ListsController < ApplicationController
             render json: list.errors, status: 422
         end
     end
+    def destroy
+        list = List.find(params[:id])
+        if list.destroy
+          render json: list
+        else
+          render json: list.errors, status: 422
+        end
+    end
     
     private
     def list_params

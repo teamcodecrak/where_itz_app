@@ -172,7 +172,7 @@ import {
           <Switch>
             <Route exact path="/" component={ Home } />
             <Route path="/aboutus" component={ AboutUs } />
-            <Route path="/mylists" render={(props) => <MyList list={list} movies={movies} movieList={movieList}/>} />
+            <Route path="/mylists" render={(props) => <MyList list={list} movies={movies} movieList={movieList} deleteList={this.deleteList} />} />
             <Route path="/searchapi" component={ SearchApi } />
             <Route path="/titleapi" component={ TitleApi } />
             <Route path="/acknowledgment" component={ Acknowledgment } />

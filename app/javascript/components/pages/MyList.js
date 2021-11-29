@@ -28,19 +28,14 @@ class MyList extends Component {
                     <Button>
                       Edit List Name
                     </Button>
-                  </NavLink>
-                  {/* <NavLink>
-                    <Button onClick={() => this.props.deleteList(list.id)}>
-                      Delete List
-                    </Button>
-                  </NavLink> */}
+                  </NavLink>  
+                  <Button onClick={() => this.props.deleteList(list.id)}>
+          Delete List
+        </Button>
                 </section>
               );
             })}
         </article>
-        <Button onClick={() => this.props.deleteList(list.id)}>
-          Delete List
-        </Button>
       </div>
     );
   }
