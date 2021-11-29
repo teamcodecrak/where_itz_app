@@ -17,18 +17,11 @@ import React, { Component } from 'react'
       }
 
       handleSubmit = () => {
-        this.searchApi(this.state.userQuery)
+        this.props.searchApi(this.state.userQuery)
         this.setState({submitted: true})
         // After the user clicks submit the handleSubmit toggles state from submited to true
       }
 
-      searchApi = (userQuery) => {
-        fetch(`/get_movies?user_query=${userQuery}`)
-        .then(response => response.json())
-        .then(response => console.log(response))
-        .then(searchApi => this.setState({ searchApi: searchApi}))
-        .catch(errors => (console.log(errors)))
-      }
 
     render() {
         // const { userQuery } = this.props
@@ -40,7 +33,7 @@ import React, { Component } from 'react'
                 
                 <button id="search_btn" onClick={this.handleSubmit} name="submit">
                     Search
-                 </button>
+                </button>
             </div>
         )
     }

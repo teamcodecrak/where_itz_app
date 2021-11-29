@@ -32,6 +32,13 @@ import {
     }
   }
 
+  searchApi = (userQuery) => {
+    fetch(`/get_movies?user_query=${userQuery}`)
+    .then(response => response.json())
+    .then(searchApi => this.setState({ searchApi: searchApi}))
+    .catch(errors => (console.log(errors)))
+  }
+
   componentDidMount(){
     this.readList()
     this.readMovieList()
@@ -170,7 +177,7 @@ import {
         <Router>
           <Header {...this.props} /> 
           <Switch>
-            <Route exact path="/" component={ Home } />
+            <Route exact path="/" render={(props) => <Home searchApi = {this.searchApi} />} />
             <Route path="/aboutus" component={ AboutUs } />
             <Route path="/mylists" render={(props) => <MyList list={list} movies={movies} movieList={movieList} deleteList={this.deleteList} />} />
             <Route path="/searchapi" component={ SearchApi } />
