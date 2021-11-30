@@ -21,7 +21,7 @@ import React, { Component } from 'react'
         this.setState({submitted: true})
         // After the user clicks submit the handleSubmit toggles state from submited to true
       }
-
+      
 
     render() {
         // const { userQuery } = this.props
@@ -34,6 +34,28 @@ import React, { Component } from 'react'
                 <button id="search_btn" onClick={this.handleSubmit} name="submit">
                     Search
                 </button>
+                <article className="cards">
+                {searchApi.length > 0 &&
+                    searchApi.map((searchApi) => {
+                    return (
+                        <section className="card" key={searchApi.id}>
+                        <h3>{searchApi.searchApi}</h3>
+                        <NavLink to={`/searchApiItems/${searchApi.id}`}>
+                            <Button>View Movies</Button>
+                        </NavLink>
+                        <br/>
+                        <NavLink to={`/editsearchApi/${searchApi.id}`}>
+                            <Button>
+                            Add
+                            </Button>
+                        </NavLink>  
+                        <Button onClick={() => this.props.deletesearchApi(searchApi.id)}>
+                            Delete searchApi
+                        </Button>
+                        </section>
+                    );
+                    })}
+                    </article>
             </div>
         )
     }
