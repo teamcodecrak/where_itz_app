@@ -10,9 +10,9 @@ import React, { Component } from 'react'
                         <dl>
                             <dt style={{fontSize: "40px"}}>
                                 <u>
-                                Websites
+                                    Websites
                                 </u>
-                                </dt>
+                            </dt>
                             <br/>
                                 <dd>
                                     - <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>
@@ -35,9 +35,9 @@ import React, { Component } from 'react'
                             <br/>
                             <dt style={{fontSize: "40px"}}>
                                 <u>
-                                Mentors
+                                    Mentors
                                 </u>
-                                </dt>
+                            </dt>
                             <br/>
                                 <dd>- Austin Walker</dd>
                                 <dd>- Sarah Proctor</dd>

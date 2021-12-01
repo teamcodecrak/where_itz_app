@@ -6,9 +6,11 @@ import mockPic from '../mockFile.js'
 
 Enzyme.configure({ adapter: new Adapter() })
 
-describe('When app renders...',() => {
-    it("See text on the AboutUs page", () => {
-    const about = shallow(<AboutUs />)
-    expect(about.find('h1').text()).toEqual('About Us')
+
+describe('When AboutUs renders',() => {
+    it("displays images", () => {
+      const about = shallow(<AboutUs />)
+      const aboutImg = about.find("img")
+      expect(aboutImg.length).toEqual(5)
     })
 })

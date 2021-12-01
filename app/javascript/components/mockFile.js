@@ -1,2 +1,4 @@
-let mockPic = "this is mock pic"
-export default mockPic
+
+let mockData = "this is mock data";
+export default mockData;
+

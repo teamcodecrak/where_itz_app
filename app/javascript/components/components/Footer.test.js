@@ -8,6 +8,6 @@ Enzyme.configure({ adapter: new Adapter() })
 describe('When app renders...',() => {
     it("displays a Footer", () => {
     const foot = shallow(<Footer />)
-    expect(foot.find('h1').text()).toEqual('Footer')
+    expect(foot.find("NavLink").length).toEqual(3)
     })
 })

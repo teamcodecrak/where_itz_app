@@ -5,9 +5,10 @@ import Home from './Home'
 
 Enzyme.configure({ adapter: new Adapter() })
 
-describe('When app renders...',() => {
-    it("See text on the home page", () => {
-    const home = shallow(<Home />)
-    expect(home.find('h1').text()).toEqual('This is the Home')
-    })
+describe('When Home renders',() => {
+    it("displays a search button", () => {
+      const home = shallow(<Home />);
+      const homeBut = home.find("button");
+      expect(homeBut.length).toEqual(1);
+    });
 })
