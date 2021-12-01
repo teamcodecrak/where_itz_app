@@ -10,6 +10,7 @@ class AboutUs extends Component {
   render() {
     return (
       <div>
+        <h1>About Us</h1>
         <img src={crakCode} alt='codecrak' className="image" />
         <div class="row">
           <div class="column">
