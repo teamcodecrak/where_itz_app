@@ -163,6 +163,7 @@ class App extends Component {
                   movieApi={movieApi}
                   lists={lists}
                   addToList={this.addToList}
+                  movieList={movieList}
                 />
               )}
             />
@@ -204,7 +205,15 @@ class App extends Component {
                 );
               }}
             />
-            <Route path="/listitems" component={ListItems} />
+            <Route path="/listitems" render={(props) => {
+              return (
+                < ListItems
+                lists={lists}
+                movies={movies}
+                currentUser={currentUser}
+                />
+              )
+            }} />
           </Switch>
           <Footer />
         </Router>

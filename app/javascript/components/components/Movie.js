@@ -18,8 +18,9 @@ class Movie extends Component {
           dropdownOpen: !prevState.dropdownOpen
         }));
       }
-      addToList = (movieId, listId) => {
-        fetch("/movie_list?movie_id=${movieId}", {
+
+      addToList = (list_id, movie_id) => {
+        fetch(`/show_movies_on_list/list_id=${list_id}&movie_id=${movie_id}`, {
           body: JSON.stringify(movieList),
           headers: {
             "Content-Type": "application/json",
@@ -37,7 +38,7 @@ class Movie extends Component {
       };
 
     render() {
-        const  { lists, movie } = this.props
+        const  { lists, movie, movieList } = this.props
         return (
             <section className="card" key={movie.id}>
                     <h4>Name: {movie.name}</h4>
@@ -54,7 +55,7 @@ class Movie extends Component {
                                         </DropdownToggle>
                                         <DropdownMenu>
                                           <DropdownItem>
-                                            <div onClick={()=>{this.handleSubmit2(movie.id, list.id)}}>
+                                            <div onClick={()=>{this.addToList(movie.id, list.id)}}>
                                               {list.list_name}
                                             </div>
                                           </DropdownItem>

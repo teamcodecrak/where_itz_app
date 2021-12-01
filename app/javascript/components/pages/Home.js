@@ -39,7 +39,7 @@ class Home extends Component {
 
   render() {
     // const { userQuery } = this.props
-    const { movieApi, lists } = this.props;
+    const { movieApi, lists, movieList } = this.props;
     return (
       <div>
         <input
@@ -61,7 +61,7 @@ class Home extends Component {
             {movieApi.length > 0 &&
               movieApi.map((movie) => {
                 return (
-                  < Movie lists={lists} movie={movie} addToList={this.props.addToList}/>
+                  < Movie lists={lists} movie={movie} addToList={this.props.addToList} movieList={movieList} />
                 )
               })}
           </div>

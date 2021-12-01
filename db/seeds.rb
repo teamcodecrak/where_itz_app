@@ -12,24 +12,24 @@ movies = [
         show_type:"Reality",
         genres:["Music"],
         officialSite:"https://abc.com/shows/dancing-with-the-stars",
-        network:[{"id":3,"name":"ABC","country":{"name":"United States","code":"US","timezone":"America/New_York"}}],
-        image:[{"medium":"https://static.tvmaze.com/uploads/images/medium_portrait/358/895815.jpg", "original":"https://static.tvmaze.com/uploads/images/original_untouched/358/895815.jpg"}],
+        network:"ABC",
+        image:"https://static.tvmaze.com/uploads/images/medium_portrait/358/895815.jpg",
         summary:"The hit series in which celebrities perform choreographed dance routines that are judged by a panel of renowned ballroom experts",
     },{
         name:"Dancing with the Stars",
         show_type:"Reality",
         genres:[],
         officialSite:"https://goplay.be/dancing-with-the-stars",
-        network:[{"id":3,"name":"ABC","country":{"name":"United States","code":"US","timezone":"America/New_York"}}],
-        image:[{"medium":"https://static.tvmaze.com/uploads/images/medium_portrait/376/940172.jpg", "original":"https://static.tvmaze.com/uploads/images/original_untouched/376/940172.jpg"}],
+        network:"ABC",
+        image:"https://static.tvmaze.com/uploads/images/medium_portrait/376/940172.jpg",
         summary:nil,
     },{
         name:"Dancing with the Stars",
         show_type:"Reality",
         genres:["Family"],
         officialSite:"https://goplay.be/dancing-with-the-stars",
-        network:[{"id":251,"name":"Seven Network","country":{"name":"Australia","code":"AU","timezone":"Australia/Sydney"}}],
-        image:[{"medium":"https://static.tvmaze.com/uploads/images/medium_portrait/44/111415.jpg", "original":"https://static.tvmaze.com/uploads/images/original_untouched/44/111415.jpg"}],
+        network:"Seven Network",
+        image:"https://static.tvmaze.com/uploads/images/medium_portrait/44/111415.jpg",
         summary:"Dancing with the Stars pairs celebrities with professional ballroom dancers who each week compete against each other in a dance-off to impress a panel of judges and ultimately the viewing public in order to survive potential elimination. Through a telephone and SMS voting, viewers vote for the duo they think should remain in the competition. Judges' scores are combined with the viewer votes when determining which duo is eliminated."
     }
 ]
