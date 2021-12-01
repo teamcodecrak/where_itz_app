@@ -5,9 +5,10 @@ import Acknowledgment from './Acknowledgment'
 
 Enzyme.configure({ adapter: new Adapter() })
 
-describe('When app renders...',() => {
-    it("See text on the Acknowledgment page", () => {
-    const acknowledgment = shallow(<Acknowledgment />)
-    expect(acknowledgment.find('h1').text()).toEqual('This is Acknowledgment')
-    })
+describe('When Acknowledgment renders...',() => {
+    it("displays typography", () => {
+      const acknowledge = shallow(<Acknowledgment />);
+      const acknowledgeDt = acknowledge.find("dt");
+      expect(acknowledgeDt.length).toEqual(2);
+    });
 })

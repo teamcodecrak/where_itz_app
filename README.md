@@ -51,75 +51,84 @@ List the ready features here:
 <!-- If you have screenshots you'd like to share, include them here. -->
 
 ## Setup
-rails-react app:
-$ rails new capstone_app -d postgresql -T
-$ cd capstone_app
-$ rails db:create
-$ git remote add origin ... created by GitHub Classroom
-$ git checkout -b main
-$ git add .
-$ git commit -m "initial commit"
-$ git push origin main
-$ bundle add rspec-rails
-$ rails generate rspec:install
-$ bundle add devise
-$ rails generate devise:install
-$ rails generate devise User
-$ rails db:migrate
-$ bundle add react-rails
-$ rails webpacker:install
-$ rails webpacker:install:react
-$ rails generate react:install
+- rails-react app:
+- $ rails new capstone_app -d postgresql -T
+- $ cd capstone_app
+- $ rails db:create
+- $ git remote add origin ... created by GitHub Classroom
+- $ git checkout -b main
+- $ git add .
+- $ git commit -m "initial commit"
+- $ git push origin main
+- $ bundle add react-rails
+- $ rails webpacker:install
+- $ rails webpacker:install:react
+- $ rails generate react:install
+- $ bundle add rspec-rails
+- $ rails generate rspec:install
+- $ bundle add devise
+- $ rails generate devise:install
+- $ rails generate devise User
+- $ rails db:migrate
 
-In the config/environments/development.rb file, add the following code at the end of the previous code inside the file:  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+In the config/environments/development.rb file, add the following code at the end of the previous code inside the file:  
+- `config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }`
 
 Check the application:
-Begin the rails server: $ rails server
-In a browser navigate to: http://localhost:3000
-In a separate terminal: $bin/webpack-dev-server
-​​Navigate to http://localhost:3000/users/sign_in and see a log in page.
-Navigate to http://localhost:3000/users/sign_up and see a sign up page.
+- Begin the rails server: $ rails server
+- In a separate terminal: $ bin/webpack-dev-server
+- In a browser navigate to: http://localhost:3000
+​​- Navigate to `http://localhost:3000/users/sign_in` and see a log in page.
+- Navigate to `http://localhost:3000/users/sign_up` and see a sign up page.
 
-$ rails generate react:component App
-The install commands created a directory in app called javascript
-In app/javascript there will be another directory called components that will contain our App.js React component with some basic code
+- $ rails generate react:component App
+This command created a directory in app called javascript.
+In app/javascript there will be another directory called components that will contain our App.js React component with some basic code.
 
-$ rails g controller Home
-Add a file in app/views/home called index.html.erb
-By calling the React Component in erb tags the component will be rendered in the browser through the Rails view. app/views/home/index.html.erb
-<%= react_component 'App' %>
-Create a route so the React component will be rendered in a Rails view.
-config/routes.rb. root 
-'home#index'
-Reactstrap/bootstrap:
-$ bundle add bootstrap
-$ mv app/assets/stylesheets/application.css app/assets/stylesheets/application.scss
-$ yarn add reactstrap
-Add an import to the scss file. app/assets/stylesheets/application.scss.
-@import 'bootstrap';
-$ bundle
-$ yarn
-$yarn add bootstrap jquery popper.js
-Add to file ./config/webpack/environment.js const webpack = require("webpack") 
-environment.plugins.append("Provide", new webpack.ProvidePlugin({
-  $: 'jquery',
-  jQuery: 'jquery',
-  Popper: ['popper.js', 'default']
-}))
+- $ rails g controller Home
+
+Add a file in app/views/home called `index.html.erb`
+By calling the React Component in erb tags the component will be rendered in the browser through the Rails view. 
+Inside the following file app/views/home/index.html.erb, add the code:
+`<%= react_component 'App' %>`
+- Create a route so the React component will be rendered in a Rails view. Go to config/routes.rb and add the following: 
+`root 'home#index'`
+
+Add Reactstrap/bootstrap to the application
+- $ bundle add bootstrap
+- $ mv app/assets/stylesheets/application.css app/assets/stylesheets/application.scss
+- $ yarn add reactstrap
+
+Add an import to the scss file. Go to app/assets/stylesheets/application.scss.
+`@import 'bootstrap';`
+- $ bundle
+- $ yarn
+
+Optional
+- $ yarn add bootstrap jquery popper.js
+- Add to file ./config/webpack/environment.js 
+`const webpack = require("webpack")` 
+`environment.plugins.append("Provide", new webpack.ProvidePlugin({`
+  `$: 'jquery',`
+  `jQuery: 'jquery',`
+  `Popper: ['popper.js', 'default']`
+`}))`
+
 Make sure to stop/restart your server.
-Create three directories in your React application: pages, assets, components
-Add footer and header to components
-Db and Seeds
 
-$ rails g resource Movie title:string show_type:string network:string genre:string us_rating:string year:integer
-$ rails g resource List list_name:string user_id:integer
-$ rails g resource MovieList movie_id:integer list_id:integer
+Create three directories in your React application: pages, assets, components.
+Add footer and header to this newly created components folder.
 
-User table from devise magic
-email: string, password: string, user_name: string
-
+Tables and Seeds
+- $ rails g resource Movie title:string show_type:string network:string genre:string us_rating:string year:integer
+- $ rails g resource List list_name:string user_id:integer
+- $ rails g resource MovieList movie_id:integer list_id:integer
+User table from devise gets a magical creation. Note: There are no commas used to separate the creation of attributes within a table. You are just give the title of each column:datatype. Remember their will be foreign keys on the belongs_to tables.
 
 Associations
+- State the has_many and belongs_to relationships. 
+
 class User
 devise :database_authenticatable, :registerable,
 :recoverable, :rememberable, :validatable
@@ -138,10 +147,12 @@ class MovieList
 belongs_to :list 
 belongs_to :movie
 
-db/seeds.rb
+Setup the mock seeds
+-To ensure that duplicate seeds are not created, establish a destroy technique.
 Movie.destroy_all
 MovieList.destroy_all
 List.destroy_all
+-Create seeds to populate each table.
 User.create username: 'Anthony', email: 'User@hotmail.com', password: '123456'
 first_user = User.first
 
@@ -153,28 +164,27 @@ second_movie = Movie.create(title: 'Jumanji', show_type: 'movie', network: ['Net
 
 MovieList.create(list: first_list, movie: first_movie)
 
-About Us Page Columns width 25 percent to fit 4 on a page.
-
-Acknowledgment Page filled with content using <dl> <dd> tags
-
 ## Tips
 `Inline styling structure
 style={{color:"gold", backgroundColor:"#540000"}}`
 
+- About Us Page Columns width 25 percent to fit 4 on a page.
+- Acknowledgment Page filled with content using bootstrap typography <dl> <dd> tags
+- Use <u></u> to underline text
+- Hold `option` tab in terminal to skip through each word in the terminal
+
 Devise forms
-https://rails.devcamp.com/trails/rails-bdd-tdd-course/campsites/building-advanced-user-interface-elements/guides/how-to-style-devise-sign-forms-rails
+`https://rails.devcamp.com/trails/rails-bdd-tdd-course/campsites/building-advanced-user-interface-elements/guides/how-to-style-devise-sign-forms-rails`
+
 Updating the styling for our sign in forms provided by Devise---log in form
+- Go to the views/devise/sessions directory, and open the file called `new.html.erb`. This file has the code for your log in page.
+- Add `class: "form-horizontal"` to the form tag. Next, change the class of each div to "form-group".
 
-Go to the views/devise/sessions directory, and open the file called new.html.erb. This file has the code for your log in page.
+- Update the style of the "Log in" button. Then, add the `class: "control-label"` to both the "password" and "remember me" labels. 
+- Likewise, add the `class: "form-control"` to the email and password fields.
+- To make email and password fields shorter in the browser, put the entire form element into a <div> tag, and then add a class to it called `col-md-4`. This leverages the Bootstrap grid layout and will take up 4 columns.
 
-Now, let's add class: "form-horizontal" to the form tag. Next, change the class of each div to "form-group".
 
-Next, update the style of the "Log in" button. Then, add the class control-label to both the "password" and "remember me" labels. Likewise, add the class form-control to the email and password fields.
-
-To make email and password fields shorter in the browser, put the entire form element into a <div> tag, and then add a class to it called col-md-4. This leverages the Bootstrap grid layout and will take up 4 columns.
-
-Using <u></u> to underline text
-Hold Options in terminal to skip through each word
 
 ## Usage
 How does one go about using it?

@@ -5,7 +5,7 @@ import ListItems from './ListItems'
 
 Enzyme.configure({ adapter: new Adapter() })
 
-describe('When app renders...',() => {
+describe('When ListItems renders...',() => {
     it("See text on the ListItems page", () => {
     const items = shallow(<ListItems />)
     expect(items.find('h1').text()).toEqual('LIST ITEMS!!!')

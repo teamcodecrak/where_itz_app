@@ -6,9 +6,10 @@ import Header from './Header'
 Enzyme.configure({ adapter: new Adapter() })
 
 describe('When app renders...',() => {
-    it("displays a header", () => {
-    const head = shallow(<Header />)
-    expect(head.find('h1').text()).toEqual('Header')
-    })
+    it("the header has a logo", () => {
+      const header = shallow(<Header />);
+      const headerImg = header.find("img");
+      expect(headerImg.length).toEqual(1);
+    });
 })
 

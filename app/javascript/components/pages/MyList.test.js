@@ -5,9 +5,9 @@ import MyList from './MyList'
 
 Enzyme.configure({ adapter: new Adapter() })
 
-describe('When app renders...',() => {
-    it("See text on the MyList page", () => {
-    const list = shallow(<MyList />)
-    expect(list.find('h1').text()).toEqual('This is the MyList')
-    })
+describe('When MyList renders',() => {
+    it("displays a header", () => {
+      const mylist = shallow(<MyList />);
+      expect(mylist.find("h1").text()).toEqual("My Lists");
+    });
 })
