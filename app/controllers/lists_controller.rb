@@ -28,7 +28,7 @@ class ListsController < ApplicationController
           render json: list.errors, status: 422
         end
     end
-    def show_movies_on_list
+    def show_movies_on
         list = MovieList.where(list_id: params[:id])
         render json: list
     end
