@@ -24,7 +24,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      list: [],
+      lists: [{list_name:"First List", user_id:2, id:1}],
       movieList: [],
       movies: [],
       movieApi: [],
@@ -41,19 +41,22 @@ class App extends Component {
     this.readMovieList();
     this.readMovies();
   }
-
+//Only returning lists I as a user made "userID"
   readList = () => {
     fetch("/lists")
       .then((response) => response.json())
       .then((payload) => this.setState({ list: payload }))
       .catch((errors) => console.log("index errors:", errors));
   };
+  //Pass list ID to find all instances of the list-movie join table
   readMovieList = () => {
     fetch("/movie_lists")
       .then((response) => response.json())
       .then((payload) => this.setState({ movieList: payload }))
       .catch((errors) => console.log("index errors:", errors));
   };
+  //Pass movie ID to find individual instances of movies
+  //ReFactor readMovieList and readMovie onto readMovieOnList
   readMovies = () => {
     fetch("/movies")
       .then((response) => response.json())
@@ -78,23 +81,7 @@ class App extends Component {
       .then(() => this.readList())
       .catch((errors) => console.log("create errors:", errors));
   };
-  createMovieList = (newMovieList) => {
-    fetch("/movie_lists", {
-      body: JSON.stringify(movieList),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-    })
-      .then((response) => {
-        if (response.status === 422) {
-          alert("There is something wrong with your submission.");
-        }
-        return response.json();
-      })
-      .then(() => this.readMovieList())
-      .catch((errors) => console.log("create errors:", errors));
-  };
+  
   updateList = (editedList, id) => {
     fetch(`http://localhost:3000/lists/${id}`, {
       body: JSON.stringify(editedList),
@@ -160,7 +147,7 @@ class App extends Component {
   render() {
     const { loggedIn, currentUser, newUserRoute, signInRoute, signOutRoute } =
       this.props;
-    const { list, movieList, movies, movieApi } = this.state;
+    const { lists, movieList, movies, movieApi } = this.state;
     console.log("MovieApi", movieApi);
     return (
       <div>
@@ -174,7 +161,8 @@ class App extends Component {
                 <Home
                   searchApi={this.searchApi}
                   movieApi={movieApi}
-                  list={list}
+                  lists={lists}
+                  addToList={this.addToList}
                 />
               )}
             />
@@ -183,7 +171,7 @@ class App extends Component {
               path="/mylists"
               render={(props) => (
                 <MyList
-                  list={list}
+                  lists={lists}
                   movies={movies}
                   movieList={movieList}
                   deleteList={this.deleteList}
@@ -199,7 +187,7 @@ class App extends Component {
               render={(props) => {
                 return (
                   <NewList
-                    list={list}
+                    lists={lists}
                     createList={this.createList}
                     currentUser={currentUser}
                   />

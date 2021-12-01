@@ -4,7 +4,7 @@ import { CardImg, Card, Button, CardTitle, Row, Col } from 'reactstrap'
 
 class MyList extends Component {
   render() {
-    const { list, movies, movieList } = this.props;
+    const { lists, movies, movieList } = this.props;
     return (
       <div>
         <h1>My Lists</h1>
@@ -14,8 +14,8 @@ class MyList extends Component {
           <button>Create a List</button>
         </NavLink>
         <article className="cards">
-          {list.length > 0 &&
-            list.map((list) => {
+          {lists.length > 0 &&
+            lists.map((list) => {
               return (
                 <section className="card" key={list.id}>
                   <h3>{list.list_name}</h3>
