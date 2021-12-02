@@ -49,15 +49,14 @@ class App extends Component {
       .then((payload) => this.setState({ lists: payload }))
       .catch((errors) => console.log("index errors:", errors));
   };
-  //Pass list ID to find all instances of the list-movie join table
+
   readMovieList = () => {
     fetch("/movie_lists")
       .then((response) => response.json())
       .then((payload) => this.setState({ movieList: payload }))
       .catch((errors) => console.log("index errors:", errors));
   };
-  //Pass movie ID to find individual instances of movies
-  //ReFactor readMovieList and readMovie onto readMovieOnList
+ 
   readMovies = () => {
     fetch("/movies")
       .then((response) => response.json())

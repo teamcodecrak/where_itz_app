@@ -21,7 +21,7 @@ class MyList extends Component {
                 <section key={list.id}>
                   <h3>{list.list_name}</h3>
                   <NavLink to={`/listItems/${list.id}`}>
-                    <Button>View Movies</Button>
+                    <Button>View Shows</Button>
                   </NavLink>
                   <NavLink to={`/editlist/${list.id}`}>
                     <Button>Edit List Name</Button>
