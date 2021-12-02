@@ -78,7 +78,12 @@ import React, { Component } from 'react'
                   <dd>- 2021 Delta</dd>
                 </dl>
               </div>
-              <div class="card-footer">Thank You! -Team CodeCRAK</div>
+              <div
+                style={{ fontSize: "30px", color: "#3C3A43" }}
+                class="card-footer"
+              >
+                Thank You! -From Team CodeCRAK
+              </div>
             </div>
           </div>
         );

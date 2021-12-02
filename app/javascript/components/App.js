@@ -6,6 +6,7 @@ import EditList from "./pages/EditList";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./pages/Home";
+import UnprotectedHome from "./pages/UnprotectedHome";
 import ListItems from "./pages/ListItems";
 import MyList from "./pages/MyList";
 import NewList from "./pages/NewList";
@@ -154,19 +155,33 @@ class App extends Component {
         <Router>
           <Header {...this.props} />
           <Switch>
-            <Route
-              exact
-              path="/"
-              render={(props) => (
-                <Home
-                  searchApi={this.searchApi}
-                  movieApi={movieApi}
-                  lists={lists}
-                  addToList={this.addToList}
-                  movieList={movieList}
-                />
-              )}
-            />
+            {loggedIn && 
+              <Route
+                exact
+                path="/"
+                render={(props) => (
+                  <Home
+                    searchApi={this.searchApi}
+                    movieApi={movieApi}
+                    lists={lists}
+                    addToList={this.addToList}
+                    movieList={movieList}
+                  />
+                )}
+              />
+            }
+            {!loggedIn && 
+              <Route
+                exact
+                path="/"
+                render={(props) => (
+                  <UnprotectedHome
+                    searchApi={this.searchApi}
+                    movieApi={movieApi}
+                  />
+                )}
+              />
+            }
             <Route path="/aboutus" component={AboutUs} />
             <Route
               path="/mylists"
@@ -199,21 +214,24 @@ class App extends Component {
               path="/editlist/:id"
               render={(props) => {
                 let id = props.match.params.id;
-                let list = this.state.list.find((l) => l.id === +id);
+                let list = this.state.lists.find((l) => l.id === +id);
                 return (
                   <EditList list={list} updateList={this.updateList} id={id} />
                 );
               }}
             />
-            <Route path="/listitems" render={(props) => {
-              return (
-                < ListItems
-                lists={lists}
-                movies={movies}
-                currentUser={currentUser}
-                />
-              )
-            }} />
+            <Route
+              path="/listitems"
+              render={(props) => {
+                return (
+                  <ListItems
+                    lists={lists}
+                    movies={movies}
+                    currentUser={currentUser}
+                  />
+                );
+              }}
+            />
           </Switch>
           <Footer />
         </Router>

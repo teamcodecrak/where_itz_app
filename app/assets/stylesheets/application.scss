@@ -7,8 +7,14 @@
    font-family: 'Lobster', cursive;
    background-color: #3C3A43;
    color: goldenrod;
+   margin: auto 0;
  }
 
+body {
+    min-height: 100%;
+    padding: 2px;
+    margin-bottom: 50px;
+}
 // Footer/Header styling
 .footer{
   bottom: 0;
@@ -131,4 +137,11 @@ h2{
 
 .card-body{
   border-radius: 10px;
+}
+
+.page-center, .page-body {
+  margin: auto;
+  width: 100%;
+  padding: 10px;
+  bottom: 45px;
 }
