@@ -24,7 +24,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      lists: [{list_name:"First List", user_id:2, id:1}],
+      lists: [],
       movieList: [],
       movies: [],
       movieApi: [],
@@ -45,7 +45,7 @@ class App extends Component {
   readList = () => {
     fetch("/lists")
       .then((response) => response.json())
-      .then((payload) => this.setState({ list: payload }))
+      .then((payload) => this.setState({ lists: payload }))
       .catch((errors) => console.log("index errors:", errors));
   };
   //Pass list ID to find all instances of the list-movie join table
