@@ -2,39 +2,30 @@
 
 # Where Itz App
 > With WhereItzApp, you can search and find where your favorite shows are streaming in one central location. Create and share customized movie lists based on your interests and get recommendations from fellow users. 
+> a product of TeamCodeCrak
+<img width="1042" alt="logo" src="https://user-images.githubusercontent.com/88990992/141697441-02bd2003-4497-4969-9cf2-ea6d16fa749b.png">
 
-> Live demo [_here_](https://www.example.com). <!-- If you have the project hosted somewhere, include the link here. -->
+- "This product uses the TVmaze API but is not endorsed or certified by TVmaze."
+
+> Live demo [_here_](https://lit-brook-40793.herokuapp.com/). 
 
 ## Table of Contents
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)
 * [Features](#features)
-* [Screenshots](#screenshots)
 * [Setup](#setup)
+* [Tips](#tips)
 * [Usage](#usage)
 * [Project Status](#project-status)
 * [Room for Improvement](#room-for-improvement)
-* [Acknowledgements](#acknowledgements)
-* [Contact](#contact)
-<!-- * [License](#license) -->
 
 
 ## General Information
-- Provide general information about your project here.
-- What problem does it (intend to) solve?
-- What is the purpose of your project?
-- Why did you undertake it?
-<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
+- Full stack web developers
+- We are taking on a capstone project to showcase everything we have learned
 
 
 ## Technologies Used
-- Tech 1 - version 1.0
-- Tech 2 - version 2.0
-- Tech 3 - version 3.0
-
-
-## Features
-List the ready features here:
 - React in rails application
 - yarn
 - bundle
@@ -44,11 +35,19 @@ List the ready features here:
 - VS code
 - Atom
 - Rubocop
+- figma
+- Learn academy syllabus
+- Google search engine
 
 
-## Screenshots
-![Example screenshot](./img/screenshot.png)
-<!-- If you have screenshots you'd like to share, include them here. -->
+## Features
+List the ready features here:
+- Search
+- Update List title
+- Delete List title
+- View shows
+- External links
+
 
 ## Setup
 - rails-react app:
@@ -185,11 +184,12 @@ Updating the styling for our sign in forms provided by Devise---log in form
 - To make email and password fields shorter in the browser, put the entire form element into a <div> tag, and then add a class to it called `col-md-4`. This leverages the Bootstrap grid layout and will take up 4 columns.
 
 
-
 ## Usage
-How does one go about using it?
-Provide various use cases and code examples here.
-
+- Unregistered and registered users can use the search button to see the tv shows in database
+- Unregistered user will need to sign up to see the network and website of the show.
+- Registered can see the network and website of the show.
+- Registerd user can create, update, and delete lists.
+- Registered user can watch a show.
 
 ## Project Status
 Project is: _in progress_ 
@@ -198,3 +198,5 @@ Project is: _in progress_
 ## Room for Improvement
 API backend fetching
 Back To Top button at the bottom of the results page
+Place movies on the app
+Rspec testing

@@ -6,35 +6,34 @@ class MyList extends Component {
   render() {
     const { lists, movies, movieList } = this.props;
     return (
-      <div>
+      <div className="page-center">
         <h1>My Lists</h1>
         <br />
-        <br />
         <NavLink to={"/newList"}>
-          <button>Create a List</button>
+          <Button>Create a List</Button>
         </NavLink>
-        <article className="cards">
+          <br/>
+
           {lists.length > 0 &&
             lists.map((list) => {
               return (
-                <section className="card" key={list.id}>
+                <Card>
+                <section key={list.id}>
                   <h3>{list.list_name}</h3>
                   <NavLink to={`/listItems/${list.id}`}>
-                    <Button>View Movies</Button>
+                    <Button>View Shows</Button>
                   </NavLink>
-                  <br/>
                   <NavLink to={`/editlist/${list.id}`}>
-                    <Button>
-                      Edit List Name
-                    </Button>
-                  </NavLink>  
+                    <Button>Edit List Name</Button>
+                  </NavLink>
                   <Button onClick={() => this.props.deleteList(list.id)}>
                     Delete List
                   </Button>
                 </section>
+                </Card>
               );
             })}
-        </article>
+ 
       </div>
     );
   }

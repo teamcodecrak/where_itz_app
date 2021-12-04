@@ -1,28 +1,16 @@
 import React, { Component } from "react";
-import {
-  Dropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-} from "reactstrap";
-import Movie from '../components/Movie'
 
-class Home extends Component {
+import UnprotectedMovie from "../components/UnprotectedMovie";
+
+class UnprotectedHome extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       userQuery: "",
       // movieApi: this.props.movieApi,
       submitted: false,
-        dropdownOpen: false,
-      };
-    }
-
-    toggle = (e) => {
-      this.setState(prevState => ({
-        dropdownOpen: !prevState.dropdownOpen
-      }));
-    }
+    };
+  }
 
   handleChange = (e) => {
     console.log(e.target.value);
@@ -35,11 +23,10 @@ class Home extends Component {
     this.setState({ submitted: true });
     // After the user clicks submit the handleSubmit toggles state from submited to true
   };
-  
 
   render() {
     // const { userQuery } = this.props
-    const { movieApi, lists, movieList } = this.props;
+    const { movieApi } = this.props;
     return (
       <div className="page-center">
         <h1>
@@ -66,19 +53,12 @@ class Home extends Component {
           <div className="cards">
             {movieApi.length > 0 &&
               movieApi.map((movie) => {
-                return (
-                  <Movie
-                    lists={lists}
-                    movie={movie}
-                    addToList={this.props.addToList}
-                    movieList={movieList}
-                  />
-                )
+                return <UnprotectedMovie movie={movie} />;
               })}
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
-export default Home;
+export default UnprotectedHome;
